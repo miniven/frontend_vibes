@@ -1,0 +1,65 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  padding: 160px 0;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #000;
+}
+
+:root {
+    --font-size-base: 18px;
+    --color-inactive: rgb(255 255 255 / 60%);
+    --color-text-active: #ccc;
+    --color-accent: #005aff;
+}
+
+.set {
+    position: relative;
+    width: 300px;
+    padding: 24px 0 0;
+    margin: 0;
+    border: none;
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: var(--font-size-base);
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: var(--color-inactive);
+    transform: translateY(40px);
+    transform-origin: left;
+    transition: 0.2s ease;
+    pointer-events: none;
+}
+
+.input {
+    width: 100%;
+    padding: 16px 0;
+    font-size: var(--font-size-base);
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: var(--color-text-active);
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 3px solid var(--color-inactive);
+    transition: 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0px 12px 25px -17px var(--color-accent);
+}
+
+.input:not(:placeholder-shown) + .label,
+.input:focus + .label {
+    color: var(--color-text-active);
+    transform: scale(0.8);
+}
